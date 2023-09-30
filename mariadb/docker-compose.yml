@@ -1,0 +1,16 @@
+version: '1'
+name: "cloudsnap-mariadb"
+volumes:
+  data:
+services:
+  db:
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: mysql
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+    volumes:
+      - data:/var/lib/mysql
+    ports:
+      - "3307:3306"
